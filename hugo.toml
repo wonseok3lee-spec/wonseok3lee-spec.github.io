@@ -1,0 +1,139 @@
+baseurl = "https://wonseok3lee-spec.github.io/"
+languageCode = "en-us"
+theme = "hugo-theme-stack"
+paginate = 10
+title = "Pecunia Tech"
+
+DefaultContentLanguage = "en"
+hasCJKLanguage = false
+
+[params]
+    disableIndexing = true     # ← 이 줄 추가
+    mainSections = ["posts", "projects"]
+    featuredImageField = "image"
+    rssFullContent = true
+    favicon = ""
+
+    [params.footer]
+        since = 2026
+        customText = ""
+
+    [params.dateFormat]
+        published = "Jan 02, 2006"
+        lastUpdated = "Jan 02, 2006 15:04 MST"
+
+    [params.sidebar]
+        subtitle = "CPA building systems at the intersection of tax, data, and finance."
+        avatar = "img/avatar.jpg"
+
+    [params.article]
+        math = false
+        toc = true
+        readingTime = true
+
+        [params.article.license]
+            enabled = false
+            default = ""
+
+    [params.comments]
+        enabled = false
+
+    # Homepage widgets (Stack theme latest syntax)
+    [[params.widgets.homepage]]
+        type = "search"
+
+    [[params.widgets.homepage]]
+        type = "archives"
+        [params.widgets.homepage.params]
+            limit = 5
+
+    [[params.widgets.homepage]]
+        type = "categories"
+        [params.widgets.homepage.params]
+            limit = 10
+
+    [[params.widgets.homepage]]
+        type = "tag-cloud"
+        [params.widgets.homepage.params]
+            limit = 10
+
+    # Single page widgets
+    [[params.widgets.page]]
+        type = "toc"
+
+    [params.opengraph]
+        [params.opengraph.twitter]
+            site = ""
+            card = "summary_large_image"
+
+    [params.defaultImage]
+        [params.defaultImage.opengraph]
+            enabled = false
+            local = false
+            src = ""
+
+    [params.colorScheme]
+        toggle = true
+        default = "auto"
+
+    [params.imageProcessing]
+        [params.imageProcessing.cover]
+            enabled = true
+        [params.imageProcessing.content]
+            enabled = true
+
+[[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+
+[[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 20
+
+[[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 30
+
+[[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 40
+
+[[menu.social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/wonseok3lee-spec"
+    [menu.social.params]
+        icon = "brand-github"
+
+[related]
+    includeNewer = true
+    threshold = 60
+    toLower = false
+
+[[related.indices]]
+    name = "tags"
+    weight = 100
+
+[[related.indices]]
+    name = "categories"
+    weight = 200
+
+[markup]
+    [markup.tableOfContents]
+        endLevel = 4
+        ordered = true
+        startLevel = 2
+
+    [markup.highlight]
+        noClasses = false
+
+    [markup.goldmark.renderer]
+        unsafe = true
